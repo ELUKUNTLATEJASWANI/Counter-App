@@ -15,11 +15,12 @@ function App() {
     return (
       <div>
         <h1>Counter App</h1>
+        <p>Count: {count}</p>
         <div>
           <button onClick={handleIncrement}>Increment</button>
           <button onClick={handleDecrement}>Decrement</button>
         </div>
-        <p>Count: {count}</p>
+       
       </div>
     );
 }
