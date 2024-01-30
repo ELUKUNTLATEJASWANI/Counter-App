@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-function App() {
-    const [count, setCount] = useState(0);
-  
-    const handleIncrement = () => {
-      setCount(prevCount => prevCount + 1);
-    };
-  
-    const handleDecrement = () => {
-      setCount(prevCount => prevCount - 1);
-    };
-  
-    return (
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  const decrementCount = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>Counter App</h1>
       <div>
-        <h1>Counter App</h1>
         <p>Count: {count}</p>
-        <div>
-          <button onClick={handleIncrement}>Increment</button>
-          <button onClick={handleDecrement}>Decrement</button>
-        </div>
-       
+        <button onClick={incrementCount}>Increment</button>
+        <button onClick={decrementCount}>Decrement</button>
       </div>
-    );
+    </div>
+  );
 }
-export default App;
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<Counter />, document.getElementById('root'));
+
+export default Counter;
